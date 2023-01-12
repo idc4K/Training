@@ -3,5 +3,6 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY . ./
-EXPOSE 7000
-CMD [ "node","index.js" ]
+ENV PORT 7000
+EXPOSE $PORT
+CMD ["npm","run","dev"]
